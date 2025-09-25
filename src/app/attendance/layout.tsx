@@ -1,30 +1,47 @@
-import Link from 'next/link';
 
-export default function AttendanceLayout({ children }: { children: React.ReactNode }) {
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+export default function AttendanceLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: 'Dashboard', href: '/attendance' },
+    { name: 'Students', href: '/attendance/students' },
+    { name: 'Staff', href: '/attendance/staff' },
+  ];
+
   return (
-    <div className="flex">
-      {/* Sidebar for Attendance Module */}
-      <aside className="w-64 bg-gray-100 p-6 space-y-4">
-        <h2 className="text-xl font-bold">Attendance</h2>
-        <nav className="space-y-2">
-          <Link href="/attendance" className="block text-gray-700 hover:text-blue-600">
-            Dashboard
-          </Link>
-          <Link href="/attendance/students" className="block text-gray-700 hover:text-blue-600">
-            Student Attendance
-          </Link>
-          <Link href="/attendance/staff" className="block text-gray-700 hover:text-blue-600">
-            Staff Attendance
-          </Link>
-          <Link href="/attendance/reports" className="block text-gray-700 hover:text-blue-600">
-            Reports
-          </Link>
-        </nav>
-      </aside>
-      {/* Main content area */}
-      <main className="flex-1 p-8">
-        {children}
-      </main>
+    <div>
+      <div className="mb-8">
+        <div className="border-b border-gray-200">
+          <nav className="-mb-px flex space-x-8" aria-label="Tabs">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`
+                  ${
+                    pathname === link.href
+                      ? 'border-brand-blue text-brand-blue'
+                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  }
+                  whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm
+                `}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </div>
+      {children}
     </div>
   );
 }

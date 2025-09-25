@@ -66,22 +66,27 @@ export default function StaffAttendancePage() {
                   {staff.source === 'biometric' ? 'Biometric Device' : staff.source === 'manual' ? 'Manual' : 'N/A'}
                 </td>
                 <td className="px-6 py-4 text-sm">
-                  {staff.attendanceStatus !== 'present' && (
-                    <div className="space-x-2">
-                      <button
-                        onClick={() => handleManualMarking(staff.id, 'present')}
-                        className="text-blue-600 hover:text-blue-800"
-                      >
-                        Mark Present
-                      </button>
-                      <button
-                        onClick={() => handleManualMarking(staff.id, 'absent')}
-                        className="text-red-600 hover:text-red-800"
-                      >
-                        Mark Absent
-                      </button>
-                    </div>
-                  )}
+                  {/* Manual marking options are always visible */}
+                  <div className="space-x-2">
+                    <button
+                      onClick={() => handleManualMarking(staff.id, 'present')}
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      Mark Present
+                    </button>
+                    <button
+                      onClick={() => handleManualMarking(staff.id, 'absent')}
+                      className="text-red-600 hover:text-red-800"
+                    >
+                      Mark Absent
+                    </button>
+                    <button
+                      onClick={() => handleManualMarking(staff.id, 'late')}
+                      className="text-yellow-600 hover:text-yellow-800"
+                    >
+                      Mark Late
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}
