@@ -1,4 +1,4 @@
-
+'use client';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
@@ -69,7 +69,8 @@ import {
     };
 
     return (
-      <div id="features" className="py-20 bg-gray-50">
+      <div id="features" className="py-20 bg-gray-50 relative overflow-hidden">
+        <motion.img src="/support-team.png" alt="Support Team" className="absolute -bottom-20 -left-20 w-80 opacity-20" animate={{ y: [0, 20, 0], x: [0, -10, 0] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} />
         <motion.div
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           initial="hidden"
@@ -92,10 +93,10 @@ import {
                 <motion.div
                   key={feature.name}
                   variants={itemVariants}
-                  className="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                  className="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex"
                 >
-                  <Link href={feature.href}>
-                    <div className="pt-6">
+                  <Link href={feature.href} className="block w-full">
+                    <div className="pt-6 h-full">
                       <div className="flow-root bg-white rounded-lg px-6 pb-8 shadow-lg h-full ring-1 ring-slate-900/5 hover:ring-2 hover:ring-offset-2 hover:ring-indigo-500">
                         <div className="-mt-6">
                           <div>

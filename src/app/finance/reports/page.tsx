@@ -1,6 +1,6 @@
 'use client';
 
-import { ChartBarIcon, DocumentChartBarIcon, AcademicCapIcon, BanknotesIcon } from '@heroicons/react/24/outline';
+import { ChartBarIcon, DocumentChartBarIcon, AcademicCapIcon, BanknotesIcon, ArrowRightCircleIcon } from '@heroicons/react/24/outline';
 
 const financeReports = [
   {

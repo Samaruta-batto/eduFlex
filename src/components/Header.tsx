@@ -18,7 +18,6 @@ export default function Header({ setSidebarOpen }: { setSidebarOpen: (open: bool
               <span className="sr-only">Open sidebar</span>
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
-            <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
           </div>
           <div className="flex items-center">
             <Menu as="div" className="ml-3 relative">

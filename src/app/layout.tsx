@@ -1,7 +1,6 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/Layout";
@@ -28,6 +27,10 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <title>EduFlex - Modern School Management</title>
+        <meta name="description" content="A modern, flexible school management system designed to streamline administrative tasks and enhance communication between educators, students, and parents." />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

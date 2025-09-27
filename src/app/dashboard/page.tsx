@@ -51,7 +51,7 @@ export default function Dashboard() {
           </button>
           <button
             onClick={() => handleQuickAction('/finance/invoices/new')}
-            className="flex items-center justify-center p-4 bg-orange-600 text-white rounded-lg shadow-md hover:bg-orange-700 transition-colors"
+            className="flex items-center justify-center p-4 bg-orange-700 text-white rounded-lg shadow-md hover:bg-orange-800 transition-colors"
           >
             <PlusCircleIcon className="h-6 w-6 mr-2" />
             <span className="text-lg font-medium">Create Invoice</span>
@@ -76,10 +76,10 @@ export default function Dashboard() {
           >
             <div className="p-6 flex items-start space-x-4">
               <div
-                className={`flex-shrink-0 p-3 rounded-full bg-${item.color}-100 text-${item.color}-600
+                className={`flex-shrink-0 p-3 rounded-full bg-${item.color}-100 text-${item.color}-700
                            transform transition-transform duration-300 group-hover:scale-110`}
               >
-                <item.icon className={`h-7 w-7 text-${item.color}-600`} aria-hidden="true" />
+                <item.icon className={`h-7 w-7 text-${item.color}-700`} aria-hidden="true" />
               </div>
               <div className="flex-1">
                 <p className="text-sm font-medium text-gray-500 truncate">{item.name}</p>
@@ -115,7 +115,7 @@ export default function Dashboard() {
                 </div>
                 <div className="flex-1">
                   <p className="text-sm text-gray-800" dangerouslySetInnerHTML={{ __html: activity.text }}></p>
-                  <p className="text-xs text-gray-500 mt-1">{activity.time}</p>
+                  <p className="text-xs text-gray-600 mt-1">{activity.time}</p>
                 </div>
               </li>
             ))}
