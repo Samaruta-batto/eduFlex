@@ -14,18 +14,20 @@ let mockStudents: Student[] = [
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { classId: string } }
+  { params }: { params: Promise<{ classId: string }> }
 ) {
-  const classId = parseInt(params.classId);
+  const { classId: classIdString } = await params;
+  const classId = parseInt(classIdString);
   const studentsInClass = mockStudents.filter(student => student.classId === classId);
   return NextResponse.json(studentsInClass);
 }
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { classId: string } }
+  { params }: { params: Promise<{ classId: string }> }
 ) {
-  const classId = parseInt(params.classId);
+  const { classId: classIdString } = await params;
+  const classId = parseInt(classIdString);
   const { name } = await request.json();
 
   const newStudent: Student = {
