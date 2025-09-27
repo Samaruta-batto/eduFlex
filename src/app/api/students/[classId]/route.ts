@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 
 interface Student {
   id: number;
@@ -13,7 +13,7 @@ let mockStudents: Student[] = [
 ];
 
 export async function GET(
-  request: Request,
+  request: NextRequest,
   { params }: { params: { classId: string } }
 ) {
   const classId = parseInt(params.classId);
@@ -22,7 +22,7 @@ export async function GET(
 }
 
 export async function POST(
-  request: Request,
+  request: NextRequest,
   { params }: { params: { classId: string } }
 ) {
   const classId = parseInt(params.classId);
