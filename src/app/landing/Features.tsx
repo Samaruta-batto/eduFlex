@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import {
     CreditCardIcon,
     UsersIcon,
@@ -48,7 +48,7 @@ import {
   ];
   
   export default function Features() {
-    const containerVariants = {
+    const containerVariants: Variants = {
       hidden: { opacity: 0, y: 50 },
       visible: {
         opacity: 1,
@@ -62,7 +62,7 @@ import {
       exit: { opacity: 0, y: 50, transition: { duration: 0.5, ease: "easeIn" } },
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
       hidden: { opacity: 0, y: 50 },
       visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
       exit: { opacity: 0, y: 50, transition: { duration: 0.3, ease: "easeIn" } },
