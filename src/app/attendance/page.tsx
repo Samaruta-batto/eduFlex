@@ -53,7 +53,7 @@ export default function AttendanceDashboard() {
       {/* Main Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Student Attendance */}
-        <div className="bg-white p-6 rounded-lg shadow-lg">
+        <div className="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:-translate-y-1">
           <h2 className="text-xl font-medium text-gray-900 mb-4">Student Attendance</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div className="flex items-center">
@@ -85,7 +85,7 @@ export default function AttendanceDashboard() {
         </div>
 
         {/* Staff Attendance */}
-        <div className="bg-white p-6 rounded-lg shadow-lg">
+        <div className="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:-translate-y-1">
           <h2 className="text-xl font-medium text-gray-900 mb-4">Staff Attendance</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div className="flex items-center">

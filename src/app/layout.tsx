@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/Layout";
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {isLandingPage ? children : <Layout>{children}</Layout>}
+        {isLandingPage ? <ParallaxProvider>{children}</ParallaxProvider> : <Layout>{children}</Layout>}
       </body>
     </html>
   );
